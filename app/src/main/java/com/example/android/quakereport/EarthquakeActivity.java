@@ -31,7 +31,8 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        WordAdapter adapter=new WordAdapter(this,QueryUtils.extractEarthquakes());
+        ArrayList<Word> earthquake=QueryUtils.extractEarthquakes()
+        WordAdapter adapter=new WordAdapter(this,earthquake);
 
 
         // Find a reference to the {@link ListView} in the layout
