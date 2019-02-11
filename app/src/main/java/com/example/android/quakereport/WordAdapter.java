@@ -29,7 +29,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView textCity=(TextView)listItemView.findViewById(R.id.city);
         textCity.setText(wordItem.getCity());
         TextView textDate=(TextView)listItemView.findViewById(R.id.date);
-        textDate.setText(wordItem.getDateCreated());
+        textDate.setText(wordItem.getDateCreated()+"");
 
 
 
