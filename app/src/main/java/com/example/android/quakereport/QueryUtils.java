@@ -56,7 +56,8 @@ public final class QueryUtils {
                 Double magnitude=propertiesObject.getDouble("mag");
                 String city=propertiesObject.getString("place");
                 long timeInMilliseconds=propertiesObject.getLong("time");
-                earthquakes.add(new Word(magnitude,city,timeInMilliseconds));
+                String urlAddress=propertiesObject.getString("url");
+                earthquakes.add(new Word(magnitude,city,timeInMilliseconds,urlAddress));
             }
 
             // TODO: Parse the response given by the SAMPLE_JSON_RESPONSE string and

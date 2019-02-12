@@ -4,12 +4,14 @@ public class Word {
     private double magnitude;
     private String location;
     private long dateCreated;
+    private String urlAddress;
 
-    public Word(double magnitude,String location,long dateCreated)
+    public Word(double magnitude,String location,long dateCreated,String urlAddress)
     {
         this.magnitude=magnitude;
         this.location=location;
         this.dateCreated=dateCreated;
+        this.urlAddress=urlAddress;
 
     }
     public double getMagnitude()
@@ -25,4 +27,7 @@ public class Word {
         return  dateCreated;
     }
 
+    public String getUrlAddress() {
+        return urlAddress;
+    }
 }

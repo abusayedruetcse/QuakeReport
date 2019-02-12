@@ -15,10 +15,17 @@
  */
 package com.example.android.quakereport;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.TestLooperManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,7 +38,7 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        ArrayList<Word> earthquake=QueryUtils.extractEarthquakes();
+        final ArrayList<Word> earthquake=QueryUtils.extractEarthquakes();
         WordAdapter adapter=new WordAdapter(this,earthquake);
 
 
@@ -41,5 +48,22 @@ public class EarthquakeActivity extends AppCompatActivity {
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
         earthquakeListView.setAdapter(adapter);
+
+        // Setting Listener
+        earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Word oneItem=earthquake.get(position);
+                Intent sendIntent=new Intent();
+                sendIntent.setAction(Intent.ACTION_VIEW);
+                sendIntent.setData(Uri.parse(oneItem.getUrlAddress()));
+                if (sendIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(sendIntent);
+                }
+
+            }
+        });
+
+
     }
 }
