@@ -31,7 +31,7 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        ArrayList<Word> earthquake=QueryUtils.extractEarthquakes()
+        ArrayList<Word> earthquake=QueryUtils.extractEarthquakes();
         WordAdapter adapter=new WordAdapter(this,earthquake);
 
 

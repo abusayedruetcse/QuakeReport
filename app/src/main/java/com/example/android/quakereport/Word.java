@@ -3,9 +3,9 @@ package com.example.android.quakereport;
 public class Word {
     private double magnitude;
     private String city;
-    private int dateCreated;
+    private String dateCreated;
 
-    public Word(double magnitude,String city,int dateCreated)
+    public Word(double magnitude,String city,String dateCreated)
     {
         this.magnitude=magnitude;
         this.city=city;
@@ -20,7 +20,7 @@ public class Word {
     {
         return city;
     }
-    public int getDateCreated()
+    public String getDateCreated()
     {
         return  dateCreated;
     }

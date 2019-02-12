@@ -1,6 +1,8 @@
 package com.example.android.quakereport;
 
 import android.util.Log;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -54,8 +56,15 @@ public final class QueryUtils {
                 JSONObject propertiesObject=featuresObject.getJSONObject("properties");
                 Double magnitude=propertiesObject.getDouble("mag");
                 String city=propertiesObject.getString("place");
-                int time=propertiesObject.getInt("time");
-                earthquakes.add(new Word(magnitude,city,time));
+                long timeInMilliseconds=propertiesObject.getLong("time");
+                //date format
+                Date dateObject = new Date(timeInMilliseconds);
+                SimpleDateFormat dateFormatter = new SimpleDateFormat("MMM DD, yyyy");
+                String dateToDisplay = dateFormatter.format(dateObject);
+                //time format
+                SimpleDateFormat timeFormatter=new SimpleDateFormat("h:mm a");
+                String timeToDisplay =timeFormatter.format(dateObject);
+                earthquakes.add(new Word(magnitude,city,dateToDisplay+"     "+timeToDisplay));
             }
 
             // TODO: Parse the response given by the SAMPLE_JSON_RESPONSE string and
