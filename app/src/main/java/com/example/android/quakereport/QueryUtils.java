@@ -57,14 +57,7 @@ public final class QueryUtils {
                 Double magnitude=propertiesObject.getDouble("mag");
                 String city=propertiesObject.getString("place");
                 long timeInMilliseconds=propertiesObject.getLong("time");
-                //date format
-                Date dateObject = new Date(timeInMilliseconds);
-                SimpleDateFormat dateFormatter = new SimpleDateFormat("MMM DD, yyyy");
-                String dateToDisplay = dateFormatter.format(dateObject);
-                //time format
-                SimpleDateFormat timeFormatter=new SimpleDateFormat("h:mm a");
-                String timeToDisplay =timeFormatter.format(dateObject);
-                earthquakes.add(new Word(magnitude,city,dateToDisplay+"     "+timeToDisplay));
+                earthquakes.add(new Word(magnitude,city,timeInMilliseconds));
             }
 
             // TODO: Parse the response given by the SAMPLE_JSON_RESPONSE string and

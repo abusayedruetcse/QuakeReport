@@ -20,13 +20,25 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             tools:text="Text"
-            android:id="@+id/city"/>
+            android:id="@+id/offsetLocation"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="Text"
+            android:id="@+id/primaryLocation"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             tools:text="December 12, 2016"
             android:id="@+id/date"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="December 12, 2016"
+            android:id="@+id/time"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

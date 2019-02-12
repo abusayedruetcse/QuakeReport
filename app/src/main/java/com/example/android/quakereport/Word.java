@@ -2,13 +2,13 @@ package com.example.android.quakereport;
 
 public class Word {
     private double magnitude;
-    private String city;
-    private String dateCreated;
+    private String location;
+    private long dateCreated;
 
-    public Word(double magnitude,String city,String dateCreated)
+    public Word(double magnitude,String location,long dateCreated)
     {
         this.magnitude=magnitude;
-        this.city=city;
+        this.location=location;
         this.dateCreated=dateCreated;
 
     }
@@ -16,11 +16,11 @@ public class Word {
     {
         return magnitude;
     }
-    public String getCity()
+    public String getLocation()
     {
-        return city;
+        return location;
     }
-    public String getDateCreated()
+    public long getDateCreated()
     {
         return  dateCreated;
     }
