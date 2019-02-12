@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,8 +29,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
 
         Word wordItem=getItem(position);
+        //DecimalFormatting
+        Double magnitude=wordItem.getMagnitude();
+        DecimalFormat formatter = new DecimalFormat("0.0");
+        String outputMagnitude = formatter.format(magnitude);
         TextView textMagnitude=(TextView)listItemView.findViewById(R.id.magnitude);
-        textMagnitude.setText(wordItem.getMagnitude()+"");
+        textMagnitude.setText(outputMagnitude);
         //splitting location into offset and primary
         String offsetLocation;
         String primaryLocation;
